@@ -4,7 +4,7 @@ function Header({ mode, onThemeChange }) {
     return (
         <>
             <header>
-                <nav className={`navbar navbar-expand-lg bg-${mode} navbar-${mode}`}>
+                <nav className={`navbar navbar-expand-lg fixed-top bg-${mode} navbar-${mode}`}>
                     <div className="container-fluid">
                         <Link className="navbar-brand" to="/">SB</Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,14 +18,19 @@ function Header({ mode, onThemeChange }) {
                                     }}>Home</NavLink>
                                 </li>
                                 <li className="nav-item">
+                                    <NavLink to="/news" className={({ isActive }) => {
+                                        return isActive ? "nav-link active" : "nav-link"
+                                    }}>Pagination&Class</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink to="/news-inf" className={({ isActive }) => {
+                                        return isActive ? "nav-link active" : "nav-link"
+                                    }}>InfiniteScroll&Function</NavLink>
+                                </li>
+                                <li className="nav-item">
                                     <NavLink to="/form" className={({ isActive }) => {
                                         return isActive ? "nav-link active" : "nav-link"
                                     }}>React Form</NavLink>
-                                </li>
-                                <li className="nav-item">
-                                    <NavLink to="/http" className={({ isActive }) => {
-                                        return isActive ? "nav-link active" : "nav-link"
-                                    }}>React HTTP</NavLink>
                                 </li>
                             </ul>
                             {/* <form className="d-flex" role="search">
@@ -35,7 +40,7 @@ function Header({ mode, onThemeChange }) {
                             <div className="form-check form-switch" style={{color: mode === 'light' ? 'black' : 'white'}}>
                                 <input onChange={onThemeChange}
                                     className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-                                <label className="form-check-label" for="flexSwitchCheckDefault">Switch Theme</label>
+                                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Switch Theme</label>
                             </div>
                         </div>
                     </div>

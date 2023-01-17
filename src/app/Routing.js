@@ -4,6 +4,9 @@ import Layout from './layout/Layout';
 import Home from './pages/Home';
 import Form from './pages/Form';
 import NotFound from './pages/NotFound';
+import News from './pages/News';
+import NewsFxWithInfiniteScroll from './pages/NewsFxWithInfiniteScroll';
+import ErrorBoundary from './shared/ErrorBoundary';
 
 
 function Routing() {
@@ -15,6 +18,15 @@ function Routing() {
                 {
                     index: true,
                     element: <Home />,
+                },
+                {
+                    path: '/news',
+                    element: <News />
+                },
+                {
+                    path: '/news-inf',
+                    element: <NewsFxWithInfiniteScroll />,
+                    errorElement: <ErrorBoundary />
                 },
                 {
                     path: '/form',

@@ -21,7 +21,9 @@ function Layout() {
     return (
         <>
             <Header mode={mode} onThemeChange={handlerThemeChange} />
-            <Outlet />
+            <section style={{marginTop: 75}} className='container'>
+                <Outlet />
+            </section>
             <Footer />
         </>
     )
