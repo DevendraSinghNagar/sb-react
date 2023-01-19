@@ -6,7 +6,6 @@ import NewsItem from './NewsItem'
 function NewsFxWithInfiniteScroll() {
   const apiKey = process.env.REACT_APP_API_KEY;
   const pageSize = 30;
-  let totalResults = 0;
   const [page, setPage] = useState(0);
   const [articles, setArticles] = useState([]);
   const [loader, setLoader] = useState(true);
@@ -20,7 +19,6 @@ function NewsFxWithInfiniteScroll() {
         setPage(page + 1);
         setArticles(articles.concat(data.articles));
         setLoader(false);
-        totalResults = data.totalResults;
       })
       .catch(error => {
         console.error('Error-', error);

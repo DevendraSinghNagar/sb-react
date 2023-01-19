@@ -2,11 +2,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Layout from './layout/Layout';
 import Home from './pages/Home';
-import Form from './pages/Form';
 import NotFound from './pages/NotFound';
 import News from './pages/News';
 import NewsFxWithInfiniteScroll from './pages/NewsFxWithInfiniteScroll';
 import ErrorBoundary from './shared/ErrorBoundary';
+import Login from './pages/Login';
 
 
 function Routing() {
@@ -29,8 +29,8 @@ function Routing() {
                     errorElement: <ErrorBoundary />
                 },
                 {
-                    path: '/form',
-                    element: <Form />
+                    path: '/login',
+                    element: <Login />
                 },
                 {
                     path: '*',

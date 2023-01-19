@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import Alert from '../shared/Alert';
+import AuthState from '../shared/AuthState';
 import Footer from './Footer';
 import Header from './Header';
 
@@ -17,15 +19,26 @@ function Layout() {
             document.title = 'SB Light mode';
         }
     }
+    const [alert, setAlert] = useState(null);
+    const handlerShowAlert = ({ type, message }) => {
+        setAlert({
+            type: type,
+            message: message
+        });
+        setTimeout(() => {
+            setAlert(null);
+        }, 1000);
+    }
 
     return (
-        <>
+        <AuthState initialState={{ name: 'Devendra Singh' }}>
             <Header mode={mode} onThemeChange={handlerThemeChange} />
-            <section style={{marginTop: 75}} className='container'>
+            <section style={{ marginTop: 75 }} className='container'>
+                <Alert alert={alert} />
                 <Outlet />
             </section>
-            <Footer />
-        </>
+            <Footer showAlert={handlerShowAlert} />
+        </AuthState>
     )
 }
 

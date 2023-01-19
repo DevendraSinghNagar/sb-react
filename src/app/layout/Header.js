@@ -1,6 +1,8 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 function Header({ mode, onThemeChange }) {
+    let location = useLocation();
+    console.log(location.pathname);
     return (
         <>
             <header>
@@ -27,17 +29,17 @@ function Header({ mode, onThemeChange }) {
                                         return isActive ? "nav-link active" : "nav-link"
                                     }}>InfiniteScroll&Function</NavLink>
                                 </li>
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <NavLink to="/form" className={({ isActive }) => {
                                         return isActive ? "nav-link active" : "nav-link"
                                     }}>React Form</NavLink>
-                                </li>
+                                </li> */}
                             </ul>
                             {/* <form className="d-flex" role="search">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                                 <button className="btn btn-outline-success" type="submit">Search</button>
                             </form> */}
-                            <div className="form-check form-switch" style={{color: mode === 'light' ? 'black' : 'white'}}>
+                            <div className="form-check form-switch" style={{ color: mode === 'light' ? 'black' : 'white' }}>
                                 <input onChange={onThemeChange}
                                     className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Switch Theme</label>
