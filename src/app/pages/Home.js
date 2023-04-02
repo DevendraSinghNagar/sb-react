@@ -1,13 +1,7 @@
-import { Counter } from "../features/counter/Counter";
+import Login from "./Login";
 
 function Home() {
-    return (
-        <>
-            <section>
-                <Counter />
-            </section>
-        </>
-    )
+    return <Login />
 }
 
 export default Home;

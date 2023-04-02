@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 // import PropTypes from 'prop-types';
 
-export class News extends Component {
+export class ClassCompWithPagination extends Component {
     // static propTypes = {
     //     pageSize: PropTypes.number
     // }
@@ -58,7 +58,7 @@ export class News extends Component {
                         <span className="sr-only"></span>
                     </div>}
                 </div>
-                {!this.state.loader && this.state.articles && this.state.articles.map((article) =>
+                {!this.state.loader && this.state.articles && this.state.articles.map((article, index) =>
                     <NewsItem key={article.publishedAt} article={article} />
                 )}
                 <div className='col-12 d-flex justify-content-between'>
@@ -70,4 +70,4 @@ export class News extends Component {
     }
 }
 
-export default News
+export default ClassCompWithPagination

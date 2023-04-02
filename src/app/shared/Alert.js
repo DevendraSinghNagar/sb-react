@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 
 const Alert = ({ alert }) => {
     const handlerCapitalize = (word) => word.slice(0, 1).toUpperCase().concat(word.slice(1));
+
     return (
         <div className='col-12'>
             {alert && <div className={`alert alert-dismissible fade show alert-${alert.type}`} role="alert">

@@ -4,8 +4,8 @@ import AuthContext from './authContext';
 const AuthState = (props) => {
     const [state, setState] = useState(props.initialState);
 
-    const updatedState = () => {
-        setState({ name: 'Logged user name' })
+    const updatedState = (val) => {
+        setState({ name: val })
     }
     return (
         <AuthContext.Provider value={{ state, updatedState }}>

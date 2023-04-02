@@ -1,8 +1,6 @@
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header({ mode, onThemeChange }) {
-    let location = useLocation();
-    console.log(location.pathname);
     return (
         <>
             <header>
@@ -20,20 +18,20 @@ function Header({ mode, onThemeChange }) {
                                     }}>Home</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/news" className={({ isActive }) => {
+                                    <NavLink to="/class-comp-pag" className={({ isActive }) => {
                                         return isActive ? "nav-link active" : "nav-link"
-                                    }}>Pagination&Class</NavLink>
+                                    }}>ClassCompWithPagination</NavLink>
                                 </li>
                                 <li className="nav-item">
-                                    <NavLink to="/news-inf" className={({ isActive }) => {
+                                    <NavLink to="/fx-comp-scroll" className={({ isActive }) => {
                                         return isActive ? "nav-link active" : "nav-link"
-                                    }}>InfiniteScroll&Function</NavLink>
+                                    }}>FunctionCompWithInfiniteScroll</NavLink>
                                 </li>
-                                {/* <li className="nav-item">
-                                    <NavLink to="/form" className={({ isActive }) => {
+                                <li className="nav-item">
+                                    <NavLink to="/redux" className={({ isActive }) => {
                                         return isActive ? "nav-link active" : "nav-link"
-                                    }}>React Form</NavLink>
-                                </li> */}
+                                    }}>Redux App</NavLink>
+                                </li>
                             </ul>
                             {/* <form className="d-flex" role="search">
                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />

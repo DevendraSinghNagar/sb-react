@@ -8,7 +8,8 @@ export class NewsItem extends Component {
     // }
 
     render() {
-        const { title, description, url, urlToImage } = this.props.article
+        const { title, description, url, urlToImage } = this.props.article;
+        const index = this.props.index;
         return (
             <article className='col-sm-3 mb-3'>
                 <div className="card">
@@ -16,7 +17,8 @@ export class NewsItem extends Component {
                     <div className="card-body">
                         <h5 className="card-title">{title}</h5>
                         <p className="card-text">{description}</p>
-                        <a href={url} className="btn btn-outline-info">Read more</a>
+                        {index ? <a href={`news/${index}`} className="btn btn-outline-info">Read more</a> :
+                            <a href={url} className="btn btn-outline-info">Read more</a>}
                     </div>
                 </div>
             </article>

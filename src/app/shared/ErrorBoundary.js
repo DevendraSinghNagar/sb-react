@@ -3,8 +3,7 @@ import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
 export default function ErrorBoundary() {
     let error = useRouteError();
-    console.log('Client side error:-');
-    console.error(error);
+    console.log('Client side error:-' + error);
 
     if (isRouteErrorResponse(error)) {
         if (error.status === 404) {

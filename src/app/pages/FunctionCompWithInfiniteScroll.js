@@ -3,7 +3,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Loader from '../shared/Loader'
 import NewsItem from './NewsItem'
 
-function NewsFxWithInfiniteScroll() {
+function FunctionCompWithInfiniteScroll() {
   const apiKey = process.env.REACT_APP_API_KEY;
   const pageSize = 30;
   const [page, setPage] = useState(0);
@@ -54,5 +54,5 @@ function NewsFxWithInfiniteScroll() {
   )
 }
 
-export default NewsFxWithInfiniteScroll
+export default FunctionCompWithInfiniteScroll
 

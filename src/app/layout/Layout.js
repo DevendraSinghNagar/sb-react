@@ -33,7 +33,7 @@ function Layout() {
     return (
         <AuthState initialState={{ name: 'Devendra Singh' }}>
             <Header mode={mode} onThemeChange={handlerThemeChange} />
-            <section style={{ marginTop: 75 }} className='container'>
+            <section style={{ marginTop: 75, paddingBottom: 60 }} className='container'>
                 <Alert alert={alert} />
                 <Outlet />
             </section>

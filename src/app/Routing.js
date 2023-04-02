@@ -3,10 +3,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './layout/Layout';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import News from './pages/News';
-import NewsFxWithInfiniteScroll from './pages/NewsFxWithInfiniteScroll';
 import ErrorBoundary from './shared/ErrorBoundary';
-import Login from './pages/Login';
+import NewsDetail from './pages/NewsDetail';
+import ClassCompWithPagination from './pages/ClassCompWithPagination';
+import FunctionCompWithInfiniteScroll from './pages/FunctionCompWithInfiniteScroll';
+import { ReduxCounter } from './features/counter/ReduxCounterApp';
 
 
 function Routing() {
@@ -20,17 +21,22 @@ function Routing() {
                     element: <Home />,
                 },
                 {
-                    path: '/news',
-                    element: <News />
+                    path: '/class-comp-pag',
+                    element: <ClassCompWithPagination />
                 },
                 {
-                    path: '/news-inf',
-                    element: <NewsFxWithInfiniteScroll />,
+                    path: '/fx-comp-scroll',
+                    element: <FunctionCompWithInfiniteScroll />,
                     errorElement: <ErrorBoundary />
                 },
                 {
-                    path: '/login',
-                    element: <Login />
+                    path: '/news/:newsId',
+                    element: <NewsDetail />,
+                    errorElement: <ErrorBoundary />
+                },
+                {
+                    path: '/redux',
+                    element: <ReduxCounter />
                 },
                 {
                     path: '*',
